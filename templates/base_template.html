@@ -20,16 +20,15 @@
     <div id="wrapper_sec">
     	<!--Masterhead -->
         <div id="masthead">
-        	<div class="logo"><a href="index.html"><img src="{% static 'images/logo.gif' %}" width="142" height="87" alt="" /></a></div>
+        	<div class="logo"><a href="/home/"><img src="{% static 'images/logo.gif' %}" width="142" height="87" alt="" /></a></div>
 			<div class="header_rightsec">
             	<div class="rightsec_1">
                 	<div class="navigation">
                     	<div id="smoothmenu1" class="ddsmoothmenu">
                         	<ul>
-                            	<li><a class="home" href="index.html">Home</a></li>
-                            	<li><a href="listing.html">Watch A Stream</a></li>
-                                <li><a href="#"> Share A Stream</a></li>
-
+                            	<li><a class="home" href="/home/">Home</a></li>
+                            	<li><a href="/protectyourneighborhood/">Protect Your Neighborhood</a></li>
+								<li><a href="/howitworks/"> How It Works</a></li>
                             </ul>
                         </div>
                     </div>
@@ -40,6 +39,7 @@
                     	<a href="#" class="search">Search</a>
                     </div>
                 </div>
+			<!-- Todo: Implement in Second Phase
             	<div class="rightsec_2">
            	  <ul class="toplinks">
                 		<li><a href="#"> Browse</a></li>
@@ -54,7 +54,8 @@
                         <li class="last"><a href="#"><img src="{% static 'images/socialicon4.png' %}" alt="" /></a></li>
                     </ul>
                 </div>
-            </div>
+            -->
+			</div>
 			<div class="clear" ></div>
 		</div>
     {% block content %}{% endblock %}
@@ -63,70 +64,31 @@
 
 <!-- bottom section-->
 <div id="bottom_sec">
- 	<div class="botbar">
-    	<div class="innercontainer">
-        	<div class="socialtitle">
-            	<h3>From the twitter  <img align="right" src="{% static 'images/twittericon.png' %}"  alt="" /> </h3>
-            </div>
-         	<div class="msg">
-            	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed elit. Nulla sem risus, vestibulum in, volutpat eget, dapib 				                 <a href="#">http://bit.ly</a>
-           </div>
-           <a class="follow_us" href="#"><span>Follow us</span></a>
-        </div>
-    </div>
     <div id="bottomcontianer">
     	<div class="innercontainer">
    	    <div id="footer">
             <div class="archieve">
                 <a href="#"><img src="{% static 'images/logo2.png' %}"  alt="" /></a>
-                <p>601 Beetle Street Ardmore</p>
-                <p>London, 73023</p>
-                <p>Tel 580.205.9995</p>
-                <p>Fax 580.389.5424</p>
-                <p> Email: <a class="undrlne" href="#">info@website.com</a></p>
-                <p> Website: <a class="undrlne" href="#">www.website.com</a></p>
+                <p>512 E Stoughton St.</p>
+                <p>Champaign,IL 61820</p>
+                <p> Email: <a class="undrlne" href="mailto:support@communitycams.org">support@communitycams.org</a></p>
             </div>
             <div class="footer_div">
             	<h4>About us</h4>
             	<ul>
-                	<li><a href="static.html">We're Hiring</a></li>
-                	<li><a href="static.html">Meet the Team</a></li>
-                	<li><a href="listing.html">Updated Collections</a></li>
-                	<li><a href="listing.html">Latest Videos</a></li>
+                	<li><a href="/projectfounders/">Project Founders</a></li>
+                	<li><a href="/ourvision/">Our Vision</a></li>
                 </ul>
             </div>
-            <div class="footer_div">
-               	<h4>Features</h4>
-               	<ul>
-                   	<li><a href="#">What's VIDEO's?</a></li>
-                   	<li><a href="#">Video's Button</a></li>
-                    <li><a href="#">iPhone &amp; Android</a></li>
-                    <li><a href="#">Widgets</a></li>
-			    </ul>
-            </div>
-      <div class="from_fliker">
-            <h4>From Flickr</h4>
-           	<ul>
-               	<li><a href="#"><img src="{% static 'images/fromflickr1.gif' %}" alt="" /></a></li>
-                <li><a href="#"><img src="{% static 'images/fromflickr2.gif' %}" alt="" /></a></li>
-                <li><a href="#"><img src="{% static 'images/fromflickr3.gif' %}" alt="" /></a></li>
-                <li><a href="#"><img src="{% static 'images/fromflickr4.gif' %}" alt="" /></a></li>
-                <li><a href="#"><img src="{% static 'images/fromflickr5.gif' %}" alt="" /></a></li>
-                <li><a href="#"><img src="{% static 'images/fromflickr6.gif' %}" alt="" /></a></li>
-            </ul>
-          </div>
           </div>
         </div>
     </div>
     <div id="botbarbg">
     	<div class="innercontainer">
-        	<div class="copy">Copyright &copy; 2011 Video Archives, Inc. All Rights Reserved.</div>
-        	<div class="powerby">Powered By: <a href="#">ABC Technologies</a></div>
+        	<div class="copy">Copyright &copy; 2014 Anant Singh and Ramit Arora</div>
     	</div>
     </div>
 <div class="clear"></div>
 </div>
-
-
 </body>
 </html>
