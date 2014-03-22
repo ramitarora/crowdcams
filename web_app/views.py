@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+import web_app.controllers.model_entry as model
 # Create your views here.
 
 
