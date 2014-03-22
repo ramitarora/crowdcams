@@ -3,15 +3,20 @@
 {% block content %}
     {% load static %}
 
-<!--Tell the users what all platforms we support-->
+<!--Tell the users what all platforms we support and some other stuff-->
 
 
 <!--Searching and adding a UStream Video>-->
-<div id="ustream_search_and_add">
-	<label id="enter_ustream_uid">Enter a USTREAM.TV URL of the LIVE Channel</label>
-	<form action="">
-		<input type="number" name="quantity" min="1" max="1000000">
-		<input type="submit">
+<div id="ustream_url_add" height="400px" position="relative">
+	<form action="/protectyourneighborhood/newpost" method="POST">
+		{% csrf_token %}
+		<label id="ustream_url_label">USTREAM.TV URL of the LIVE Channel</label>
+		<input id="ustream_url" type="url" name="ustream_url"><br>
+		<label id="emergency_contact_label">Phone Number of the local authority to contact in case of Emergency</label>
+		<input id="emergency_contact" type="number" name="emergency_contact"><br>
+		<label id="location_description_label">Address of the location in Stream</label>
+		<input id="location_desription" type="text" name="location_description"><br>
+		<input type="submit" name="submit">
 	</form>
 </div>
 

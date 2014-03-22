@@ -17,6 +17,25 @@
 <script type="text/javascript">Cufon.replace('h1,h2,h3,h4,h5, h6, .txtcufon');</script>
 </head>
 <body>
+	<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+	<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/lDOKZikPg9n9uvZbDUotrw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+
+	<!-- A tab to launch the Classic Feedback Widget -->
+	<script>
+	UserVoice = window.UserVoice || [];
+	UserVoice.push(['showTab', 'classic_widget', {
+	  mode: 'full',
+	  primary_color: '#cc6d00',
+	  link_color: '#007dbf',
+	  default_mode: 'support',
+	  forum_id: 245812,
+	  tab_label: 'Feedback & Support',
+	  tab_color: '#cc6d00',
+	  tab_position: 'middle-right',
+	  tab_inverted: false
+	}]);
+	</script>
+	
     <div id="wrapper_sec">
     	<!--Masterhead -->
         <div id="masthead">
@@ -28,7 +47,7 @@
                         	<ul>
                             	<li><a class="home" href="/">Home</a></li>
                             	<li><a href="/protectyourneighborhood/">Protect Your Neighborhood</a></li>
-								<li><a href="/howitworks/"> How It Works</a></li>
+								<li><a href="/howitworks/">How It Works</a></li>
                             </ul>
                         </div>
                     </div>

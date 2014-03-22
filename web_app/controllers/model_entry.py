@@ -5,7 +5,7 @@ class DataEntryHelper:
 	def save_stream_details_to_model(self,url,emergency_contact=0,location_description=" "):
 		#Method to enter stream details to model by using Ustream URL 
 		#param: Ustream URL
-		#return: True if the URL is sucessfully added. False otherwise
+		#return: True if the data associated with the URL is sucessfully added. False otherwise
 		api_object = ustream_api.UstreamAPI()
 		stream_details = api_object.get_stream_details_by_url(url)
 		if(stream_details == None):
