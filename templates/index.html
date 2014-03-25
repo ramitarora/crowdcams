@@ -13,22 +13,24 @@
                     {% for stream in streams %}
                         <li>
                             <div class="vediodiv">
+                                <div id="{{ stream.ustream_uid }}div"
+                                     style="width: inherit;height: inherit;position: absolute; z-index: 1000;"></div>
                                 <object class="flashobj" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="utv510050"
-                                        style="width: inherit;height: inherit;">
+                                        style="width: inherit;height: inherit; z-index: -1000;" >
                                     <param name="flashvars"
                                            value="autoplay=true&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"/>
                                     <param name="allowfullscreen" value="true"/>
                                     <param name="allowscriptaccess" value="always"/>
                                     <param name="movie" value="http://www.ustream.tv/flash/viewer.swf"/>
                                     <embed flashvars="autoplay=true&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"
-                                           allowfullscreen="true" allowscriptaccess="always" id="{{ stream.ustream_uid }}"
+                                           allowfullscreen="true" allowscriptaccess="always" id="{{ stream.ustream_uid }}embed"
                                            name="utv_n_41439" src="http://www.ustream.tv/flash/viewer.swf"
                                            type="application/x-shockwave-flash"
                                            style="width: inherit;height: inherit;"/>
                                 </object>
                             </div>
                             <script type="application/javascript">
-                                $('#{{ stream.ustream_uid }}').on('click', function(e){
+                                $('#{{ stream.ustream_uid }}div').mousedown(function(e){
                                     $.fancybox.open({
                                         href:'http://www.ustream.tv/embed/{{ stream.ustream_uid }}',
                                         type:'iframe'
@@ -36,12 +38,6 @@
                                 })
                             </script>
                             <div class="clear"></div>
-                            <p><a class="watch_stream fancybox.iframe" href="http://www.ustream.tv/embed/{{ stream.ustream_uid }}">
-                                Click Here to Watch this Stream</a></p>
-
-                            <p class="viewcounts">241,699 views</p>
-
-                            <p class="by">By: <a href="#" class="undrlne">SeaNanners</a></p>
                         </li>
                     {% endfor %}
                 </ul>
