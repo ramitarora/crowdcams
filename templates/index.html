@@ -9,31 +9,25 @@
             	<!--Vedio slider -->
                 <div class="vedio_banner">
            			<div id="slider2" style="height:394px width="640" overflow:hidden ">
+                        {% for stream in streams %}
 						<div class="contentdiv">                    	
-							<iframe src="http://www.ustream.tv/embed/17528639" id="UstreamFrame" width="640" height="392" style="border: 0 transparent none;"></iframe>
+							<iframe src="http://www.ustream.tv/embed/{{ stream.ustream_uid }}" id="{{ stream.ustream_uid }}" style="border: 0 transparent none; height: inherit; width: inherit;"></iframe>
 						</div>
+                        {% endfor %}
                     </div>
                     <div id="paginate-slider2" class="pagination">
-                        	<a class="toc" href="#">
-                            	<img class="imge" src="/static/images/vedio_thumb1.gif"  alt="" />
+                        {% for stream in streams %}
+                        	<a class="toc nomar" href="#">
+                                {% with stream.ustream_uid as uid_str %}
+                            	<img class="imge" src="http://static-cdn1.ustream.tv/i/channel/picture/{{ uid_str.0 }}/{{ uid_str.1 }}/{{ uid_str.2 }}/{{ uid_str.3 }}/{{ uid_str }}/2680229,66x66,r:1.jpg"  alt="" />
                             	<img class="addtoplaylist1" src="/static/images/plusicon.png" alt="" />
+                            {% endwith %}
                             </a>
-                        	<a class="toc" href="#">
-                            	<img class="imge" src="/static/images/vedio_thumb2.gif"  alt="" />
-                            	<img class="addtoplaylist1" src="/static/images/plusicon.png" alt="" />
-                            </a>
-                            <a class="toc" href="#">
-                            	<img class="imge" src="/static/images/vedio_thumb3.gif"  alt="" />
-                            	<img class="addtoplaylist1" src="/static/images/plusicon.png" alt="" />
-                            </a>
-                            <a class="toc nomar" href="#">
-                            	<img class="imge" src="/static/images/vedio_thumb4.gif"  alt="" />
-                            	<img class="addtoplaylist1" src="/static/images/plusicon.png" alt="" />
-                            </a>
-
-					    </div>
+                        {% endfor %}
+					</div>
 					<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
 			    </div>
+
               	<div class="clear"></div>
             <div class="clear"></div>
             </div>
@@ -64,6 +58,5 @@
         </div>
         <div class="clear"></div>
 		<!-- movie ads-->
-        <div class="movie_ads"><a href="#"><img src="{% static 'images/movie_ad.gif' %}"  alt="" /></a></div>
     </div>
 {% endblock %}
