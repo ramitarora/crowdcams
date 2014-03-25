@@ -408,7 +408,7 @@ a.next {
 =======================================================================
 */
 .col1 {
-	width:652px;
+	width:100%;
 	float:left;
 }
 .col2 {
@@ -662,7 +662,7 @@ h2 {
 }
 .mostcontainer ul {
 	padding-top:23px;
-	width:661px;
+    margin-left: 20px;
 	float:left;
 }
 .by {
@@ -670,7 +670,7 @@ h2 {
 }
 .mostcontainer li {
 	float:left;
-	width:155px;
+	margin-left: 10px;
 	padding-bottom:20px;
 	margin-right:10px;
 }
@@ -683,11 +683,10 @@ h2 {
 	text-decoration:underline;
 }
 .vediodiv {
-	width:153px;
-	height:102px;
+	width:290px;
+	height:200px;
 	border:solid 1px #aaa;
 	text-align:center;
-	padding-top:3px;
 	color:#f0f0f0;
 	margin-bottom:5px;
 	position:relative;

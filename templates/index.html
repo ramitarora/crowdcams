@@ -3,60 +3,52 @@
 {% block content %}
     {% load static %}
     <!--Content Sec -->
-        <div id="content_sec">
-        	<!--Main Section-->
-            <div class="col1">
-            	<!--Vedio slider -->
-                <div class="vedio_banner">
-           			<div id="slider2" style="height:394px width="640" overflow:hidden ">
-                        {% for stream in streams %}
-						<div class="contentdiv">                    	
-							<iframe src="http://www.ustream.tv/embed/{{ stream.ustream_uid }}" id="{{ stream.ustream_uid }}" style="border: 0 transparent none; height: inherit; width: inherit;"></iframe>
-						</div>
-                        {% endfor %}
-                    </div>
-                    <div id="paginate-slider2" class="pagination">
-                        {% for stream in streams %}
-                        	<a class="toc nomar" href="#">
-                                {% with stream.ustream_uid as uid_str %}
-                            	<img class="imge" src="http://static-cdn1.ustream.tv/i/channel/picture/{{ uid_str.0 }}/{{ uid_str.1 }}/{{ uid_str.2 }}/{{ uid_str.3 }}/{{ uid_str }}/2680229,66x66,r:1.jpg"  alt="" />
-                            	<img class="addtoplaylist1" src="/static/images/plusicon.png" alt="" />
-                            {% endwith %}
-                            </a>
-                        {% endfor %}
-					</div>
-					<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
-			    </div>
+    <div id="content_sec">
+        <!--Main Section-->
+        <div class="col1">
+            <!--Vedio slider -->
+            <div class="mostcontainer">
+                <h2 class="heading">Featured Streams</h2>
+                <ul>
+                    {% for stream in streams %}
+                        <li>
+                            <div class="vediodiv">
+                                <object class="flashobj" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="utv510050"
+                                        style="width: inherit;height: inherit;">
+                                    <param name="flashvars"
+                                           value="autoplay=true&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"/>
+                                    <param name="allowfullscreen" value="true"/>
+                                    <param name="allowscriptaccess" value="always"/>
+                                    <param name="movie" value="http://www.ustream.tv/flash/viewer.swf"/>
+                                    <embed flashvars="autoplay=true&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"
+                                           allowfullscreen="true" allowscriptaccess="always" id="{{ stream.ustream_uid }}"
+                                           name="utv_n_41439" src="http://www.ustream.tv/flash/viewer.swf"
+                                           type="application/x-shockwave-flash"
+                                           style="width: inherit;height: inherit;"/>
+                                </object>
+                            </div>
+                            <script type="application/javascript">
+                                $('#{{ stream.ustream_uid }}').on('click', function(e){
+                                    $.fancybox.open({
+                                        href:'http://www.ustream.tv/embed/{{ stream.ustream_uid }}',
+                                        type:'iframe'
+                                    })
+                                })
+                            </script>
+                            <div class="clear"></div>
+                            <p><a class="watch_stream fancybox.iframe" href="http://www.ustream.tv/embed/{{ stream.ustream_uid }}">
+                                Click Here to Watch this Stream</a></p>
 
-              	<div class="clear"></div>
-            <div class="clear"></div>
+                            <p class="viewcounts">241,699 views</p>
+
+                            <p class="by">By: <a href="#" class="undrlne">SeaNanners</a></p>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
-            <!--Right Section-->
-            <div class="col2">
-           		<h2 class="heading" >Featured Listing</h2>
-              		<div class="sideblock">
-               			<ul>
-                    		<li class="first"> <a href="#"><img src="/static/images/feature_listing1.gif"  alt="" /></a> </li>
-                        	<li><a href="#"><img src="/static/images/feature_listing2.gif"  alt="" /></a> </li>
-                        	<li><a href="#"><img src="/static/images/feature_listing3.gif"  alt="" /></a> </li>
-                        	<li><a href="#"><img src="/static/images/feature_listing4.gif"  alt="" /></a> </li>
-                        	<li class="first"> <a href="#"><img src="/static/images/feature_listing5.gif"  alt="" /></a> </li>
-                        	<li><a href="#"><img src="/static/images/feature_listing6.gif"  alt="" /></a> </li>
-                        	<li><a href="#"><img src="/static/images/feature_listing7.gif"  alt="" /></a> </li>
-                        	<li><a href="#"><img src="/static/images/feature_listing8.gif"  alt="" /></a> </li>
-                        	<li class="first"> <a href="#"><img src="/static/images/feature_listing9.gif"  alt="" /></a> </li>
-                        	<li><a href="#"><img src="/static/images/feature_listing10.gif"  alt="" /></a> </li>
-                        	<li><a href="#"><img src="/static/images/feature_listing11.gif"  alt="" /></a> </li>
-                			<li><a href="#"><img src="/static/images/feature_listing12.gif"  alt="" /></a> </li>
-                   		</ul>
-              		<div class="clear"></div>
-              </div>
-			  <!--ADS -->
-              <div class="ads">
-              	<a href="#"><img src="/static/images/kfc.gif"  alt="" /></a>
-              </div>
+            <div class="clear"></div>
         </div>
         <div class="clear"></div>
-		<!-- movie ads-->
+        <!-- movie ads-->
     </div>
 {% endblock %}
