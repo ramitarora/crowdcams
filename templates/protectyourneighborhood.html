@@ -2,34 +2,45 @@
 
 {% block content %}
     {% load static %}
-
+<link rel="stylesheet" type="text/css" href="{% static 'css/formatting.css' %}" />
+	<div id="content_sec">
+        <!--Main Section-->
+	<div class="container" id="written_content">
+		<div class="interior">
+			<h2 style="font-size:32px">Protect Your Neighbourhood</h2>
+		<div class="group">
+			<p class="small_type"><nbsp><nbsp><nbsp><nbsp>At Crowdcams we envision a world where, as opposed to present, most of the surveillance cameras are monitored by the crowd and criminal instances are reported at the time of activity. This is in contrast with the current system, where, a bunch of security personals look at the video recordings much after everything has happened.</p>
+		</div>
+        <h2 style="font-size:24px">Going forward</h2>
+		<div class="group2">
 <!--Tell the users what all platforms we support and some other stuff-->
-
-
 <!--Searching and adding a UStream Video>-->
 <div id="ustream_url_add" height="400px" position="relative">
 	<form action="/protectyourneighborhood/newpost" method="POST">
 		{% csrf_token %}
-		<table width="800" border="0">
-  <tr class="tblrow">
-    <td>&nbsp;<label id="ustream_url_label">USTREAM.TV URL of the LIVE Channel</label></td>
-    <td>&nbsp;<input id="ustream_url" class="textbox" type="url" name="ustream_url"></td>
-  </tr>
-  <tr class="tblrow">
-    <td>&nbsp;<label id="emergency_contact_label">Phone Number of the local authority to contact in case of Emergency</label></td>
-    <td>&nbsp;<input id="emergency_contact" class="textbox" type="number" style="width:140px" name="emergency_contact"></td>
-  </tr>
-  <tr class="tblrow">
-    <td>&nbsp;<label id="location_description_label">Address of the location in Stream</label></td>
-    <td>&nbsp;<input id="location_desription" class="textbox" type="text" name="location_description"></td>
-  </tr>
-  <tr class="tblrow">
-    <td>&nbsp;</td>
-    <td>&nbsp;<input type="submit" class="btn" name="submit"></td>
-  </tr>
-</table>	
-		
+        <ol>
+        <li>
+		<label id="ustream_url_label" style="text-transform:uppercase;">Stream URL</label>
+		<input id="ustream_url" class="textbox" style="width:400px" type="url" name="ustream_url" placeholder="http://www.ustream.tv/channel/your-channel-here"><br>
+        </li>
+        <li>
+        <label id="emergency_contact_label" style="text-transform:uppercase;">Emergency Phone Number</label>
+		<input id="emergency_contact" class="textbox" type="number" name="emergency_contact" placeholder = "(212) 239-9811">
+		</li>
+        <li>
+        <label id="location_description_label" style="text-transform:uppercase;">Exact Location</label>
+		<textarea id="location_desription" class="textbox" type="text" cols="2" rows="10" name="location_description" placeholder="Intersection of 33rd Street and Broadway, New York, NY 10001"></textarea>
+		</li>
+        <li>
+        <input type="submit" class="btn" name="submit">
+        </li>
+        </ol>
 	</form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 </div>
 
 {% endblock %}
