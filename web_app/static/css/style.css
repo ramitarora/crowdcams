@@ -1661,3 +1661,36 @@ margin-top:-6px;}
 .powerby a{
 	color:#fff;
 }
+
+/*
+=======================================================================
+	Textbox
+=======================================================================
+*/
+
+.textbox { 
+    background-color: #F6FAF4; 
+    border: solid 1px #646464; 
+    outline: none; 
+    padding: 2px 2px; 
+	width:400px;
+} 
+.textbox:hover { 
+    background-color: #7BEBD0; 
+} 
+.textbox:focus { 
+    background-color: #28D36C; 
+} 
+.textbox:active { 
+    background-color: #28D36C; 
+}
+
+/*
+=======================================================================
+	Table Row
+=======================================================================
+*/
+.tblrow {
+	margin-top:30px;
+}
+}

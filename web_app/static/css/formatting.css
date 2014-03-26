@@ -101,12 +101,12 @@ transition-duration: 1.5s;
 -o-transition-timing-function: fadeInDown;
 transition-timing-function: fadeInDown;
 float: left;
-margin-top:100px;
+margin-top:130px;
 margin-left: 500px;
 margin-right: 10px;
 width: 580px;
 position: relative;
-color: #11573E;
+color: #112849;
 padding: 0;
 border: 0;
 font: inherit;
@@ -153,7 +153,7 @@ bottom: 10px;
 left: 50%;
 margin-left: -470px;
 }
-#hero_images {
+#howitworks_image {
 background-image: url(../images/stockvault-crowd-of-people132432.jpg);
 background-size: auto auto;
 background-repeat: no-repeat;
@@ -164,6 +164,18 @@ top: 0px;
 left: 0px;
 height:100%;
 width:100%;
+}
+#ourvision_image {
+	background-image: url(../images/ourvision.jpg);
+	background-size: auto auto;
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: absolute;
+	-webkit-background-size: auto 100%;
+	top: 0px;
+	left: 100px;
+	height:80%;
+	width:80%;
 }
 #s-board {
 	vertical-align:baseline;
