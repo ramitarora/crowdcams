@@ -6,14 +6,20 @@ from web_app.models import UstreamListing
 
 def home(request):
     streams = UstreamListing.objects.all()
-    for stream in streams:
-        stream.ustream_uid = str(stream.ustream_uid)
     streams = sorted(streams, key=lambda x:x.title)
     context = {
         'title': 'Crowd Cams',
         'streams': streams[0:6]
     }
     return render(request, 'index.html', context)
+
+def list(request, query):
+    streams = UstreamListing.objects.all()
+    context = {
+        'title': 'List of available Streams',
+        'streams': streams
+    }
+    return render(request, 'listing.html', context)
 
 
 def protect_your_neighborhood(request):
