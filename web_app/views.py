@@ -15,9 +15,18 @@ def home(request):
 
 def list(request):
     streams = UstreamListing.objects.all()
+    streams = sorted(streams, key=lambda x:x.title)
+    sections = {}
+    for stream in streams:
+        char = stream.title[0]
+        if char not in sections:
+            sections[char] = [stream]
+        else:
+            sections[char].append(stream)
+
     context = {
         'title': 'List of available Streams',
-        'streams': streams
+        'sections': sections
     }
     return render(request, 'listing.html', context)
 

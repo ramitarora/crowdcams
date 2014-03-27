@@ -85,7 +85,8 @@ p {
 	width:100%;
 	padding:4px 0 6px 0;
 	border-bottom:solid 1px #cccccc;
-	
+	margin-bottom: 10px;
+    text-align: center;
 }
 input {
 	font-size:11px;
@@ -652,13 +653,13 @@ h2 {
 	Most Popular Vedio Banner Rules
 =======================================================================
 */
-.mostcontainer {
+.mostcontainer , .listcontainer{
 	width:100%;
 	float:left;
 	overflow:hidden;
 	margin-bottom:1px;
 }
-.mostcontainer h2, .nwscontainer h2 {
+.mostcontainer h2, .nwscontainer h2, .listcontainer h2{
 	width:100%;
 	padding:10px 0 6px 0;
 	border-bottom:solid 1px #ccc;
@@ -671,17 +672,13 @@ h2 {
 .by {
 	font-size:11px;
 }
-.mostcontainer li {
+.mostcontainer li{
 	float:left;
 	margin-left: 10px;
 	padding-bottom:20px;
 	margin-right:10px;
 }
-.mostcontainer .altli{
-    margin-left: 10px;
-	padding-bottom:20px;
-	margin-right:10px;
-}
+
 .mostcontainer li p{
 	padding-top:1px;
 	line-height:16px;
@@ -699,6 +696,62 @@ h2 {
 	margin-bottom:5px;
 	position:relative;
 }
+
+.listcontainer ul {
+    padding-top:23px;
+    margin-left: 20px;
+	width: 100%;
+}
+
+.listcontainer li{
+    margin-left: 10px;
+	padding-bottom:10px;
+    margin-top: 15px;
+	margin-right:10px;
+    border-bottom: solid 2px #cccccc;
+}
+
+.listcontainer li h3{
+    padding-bottom: 30px;
+}
+.listcontainer li p{
+	padding-top:5px;
+	line-height:16px;
+	padding-bottom:10px;
+    font-size: 15px;
+}
+
+.listcontainer .vediodiv{
+    float: left;
+}
+
+.listcontainer .stream_details {
+    float: left;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+#accordion .ui-accordion-content {
+    width: 100%;
+    background-color: #f3f3f3;
+    color: #777;
+    font-size: 10pt;
+    line-height: 16pt;
+}
+
+#accordion .ui-accordion-header {
+    background-color: #4d633f;
+    color: #ffffff;
+    padding: 10px 0px 10px 10px;
+    background-image: -moz-linear-gradient(top,  #829f6d 0%, #4d633f 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottombottom, color-stop(0%,829f6d), color-stop(100%,#4d633f)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top,  #829f6d 0%,#4d633f 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, #829f6d 0%,#4d633f 100%); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top,  #829f6d 0%,#4d633f 100%); /* IE10+ */
+    background-image: linear-gradient(to bottombottom,  #829f6d 0%,#4d633f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#829f6d', endColorstr='#4d633f',GradientType=0 ); /* IE6-9 */
+}
+
 .colr2 {
 	color:#4d633f	
 }

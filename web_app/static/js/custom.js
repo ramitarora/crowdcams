@@ -10,4 +10,7 @@ $(document).ready(function() {
 		openEffect	: 'none',
 		closeEffect	: 'none'
 	});
+    $("#accordion").accordion({
+        heightStyle: 'content'
+    });
 });

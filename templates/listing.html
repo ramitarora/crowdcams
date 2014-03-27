@@ -7,53 +7,58 @@
         <!--Main Section-->
         <div class="col1">
             <!--Vedio slider -->
-            <div class="mostcontainer">
-                <h2 class="heading">Featured Streams</h2>
-                <ul>
-                    {% for stream in streams %}
-                        <li class="altli">
-                            <div class="vediodiv">
-                                <div id="{{ stream.ustream_uid }}div"
-                                     style="width: inherit;height: 140px;position: absolute; z-index: 1000;"></div>
-                                <object class="flashobj" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
-                                        id="utv510050"
-                                        style="width: inherit;height: inherit; z-index: -1000;">
-                                    <param name="flashvars"
-                                           value="autoplay=false&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"/>
-                                    <param name="allowfullscreen" value="true"/>
-                                    <param name="allowscriptaccess" value="always"/>
-                                    <param name="movie" value="http://www.ustream.tv/flash/viewer.swf"/>
-                                    <embed flashvars="autoplay=false&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"
-                                           allowfullscreen="true" allowscriptaccess="always"
-                                           id="{{ stream.ustream_uid }}embed"
-                                           name="utv_n_41439" src="http://www.ustream.tv/flash/viewer.swf"
-                                           type="application/x-shockwave-flash"
-                                           style="width: inherit;height: inherit;"/>
-                                </object>
-                            </div>
-                            <div class="clear"></div>
-                            <p><a class="colr2 stream_link"
-                                  href="http://www.ustream.tv/embed/{{ stream.ustream_uid }}">{{ stream.title }}
-                                </a></p>
+            <h2 class="heading"> All Available Streams</h2>
+            <div class="listcontainer" id="accordion">
+                {% for section,streams in sections.items %}
+                    <h3>Starting With: {{ section }}</h3>
+                    <div>
+                        <ul>
+                            {% for stream in streams %}
+                                <li>
+                                    <div class="vediodiv">
+                                        <div id="{{ stream.ustream_uid }}div"
+                                             style="width: inherit;height: 140px;position: absolute; z-index: 1000;"></div>
+                                        <object class="flashobj" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                                                id="utv510050"
+                                                style="width: inherit;height: inherit; z-index: -1000;">
+                                            <param name="flashvars"
+                                                   value="autoplay=false&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"/>
+                                            <param name="allowfullscreen" value="true"/>
+                                            <param name="allowscriptaccess" value="always"/>
+                                            <param name="movie" value="http://www.ustream.tv/flash/viewer.swf"/>
+                                            <embed flashvars="autoplay=false&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"
+                                                   allowfullscreen="true" allowscriptaccess="always"
+                                                   id="{{ stream.ustream_uid }}embed"
+                                                   name="utv_n_41439" src="http://www.ustream.tv/flash/viewer.swf"
+                                                   type="application/x-shockwave-flash"
+                                                   style="width: inherit;height: inherit;"/>
+                                        </object>
+                                    </div>
+                                    <div class="stream_details">
+                                        <h3><a class="colr2 stream_link fancybox.iframe"
+                                               href="http://www.ustream.tv/embed/{{ stream.ustream_uid }}">{{ stream.title }}
+                                        </a></h3>
 
-                            <p class="viewcounts">Location: {{ stream.location_description }}</p>
+                                        <p>Location: {{ stream.location_description }}</p>
 
-                            <p class="by">Emergency Contact: {{ stream.emergency_contact }}</p>
+                                        <p>Emergency Contact: {{ stream.emergency_contact }}</p>
+                                    </div>
+                                    <div class="clear"></div>
 
-                            <div class="clear"></div>
-
-                            <script type="application/javascript">
-                                $('#{{ stream.ustream_uid }}div').mousedown(function (e) {
-                                    $.fancybox.open({
-                                        href: 'http://www.ustream.tv/embed/{{ stream.ustream_uid }}',
-                                        type: 'iframe'
-                                    })
-                                })
-                            </script>
-                            <div class="clear"></div>
-                        </li>
-                    {% endfor %}
-                </ul>
+                                    <script type="application/javascript">
+                                        $('#{{ stream.ustream_uid }}div').mousedown(function (e) {
+                                            $.fancybox.open({
+                                                href: 'http://www.ustream.tv/embed/{{ stream.ustream_uid }}',
+                                                type: 'iframe'
+                                            })
+                                        })
+                                    </script>
+                                    <div class="clear"></div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
             </div>
             <div class="clear"></div>
         </div>
