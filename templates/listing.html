@@ -8,6 +8,7 @@
         <div class="col1">
             <!--Vedio slider -->
             <h2 class="heading"> All Available Streams</h2>
+
             <div class="listcontainer" id="accordion">
                 {% for section,streams in sections.items %}
                     <h3>Starting With: {{ section }}</h3>
@@ -49,7 +50,13 @@
                                         $('#{{ stream.ustream_uid }}div').mousedown(function (e) {
                                             $.fancybox.open({
                                                 href: 'http://www.ustream.tv/embed/{{ stream.ustream_uid }}',
-                                                type: 'iframe'
+                                                type: 'iframe',
+                                                afterLoad: function () {
+                                                    suffix = '<h3>{{ stream.title }}</h3>' +
+                                                            '<h4>Location: {{ stream.location_description }}</h4>' +
+                                                            '<h4>Emergency Contact: {{ stream.emergency_contact }}</h4>';
+                                                    $(suffix).appendTo(this.inner)
+                                                }
                                             })
                                         })
                                     </script>
