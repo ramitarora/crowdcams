@@ -10,7 +10,7 @@ def home(request):
         stream.ustream_uid = str(stream.ustream_uid)
     streams = sorted(streams, key=lambda x:x.title)
     context = {
-        'title': 'Community Cams',
+        'title': 'Crowd Cams',
         'streams': streams[0:6]
     }
     return render(request, 'index.html', context)
