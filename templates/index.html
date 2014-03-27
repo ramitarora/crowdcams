@@ -15,25 +15,38 @@
                             <div class="vediodiv">
                                 <div id="{{ stream.ustream_uid }}div"
                                      style="width: inherit;height: 140px;position: absolute; z-index: 1000;"></div>
-                                <object class="flashobj" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="utv510050"
-                                        style="width: inherit;height: inherit; z-index: -1000;" >
+                                <object class="flashobj" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                                        id="utv510050"
+                                        style="width: inherit;height: inherit; z-index: -1000;">
                                     <param name="flashvars"
                                            value="autoplay=false&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"/>
                                     <param name="allowfullscreen" value="true"/>
                                     <param name="allowscriptaccess" value="always"/>
                                     <param name="movie" value="http://www.ustream.tv/flash/viewer.swf"/>
                                     <embed flashvars="autoplay=false&amp;brand=embed&amp;cid={{ stream.ustream_uid }}"
-                                           allowfullscreen="true" allowscriptaccess="always" id="{{ stream.ustream_uid }}embed"
+                                           allowfullscreen="true" allowscriptaccess="always"
+                                           id="{{ stream.ustream_uid }}embed"
                                            name="utv_n_41439" src="http://www.ustream.tv/flash/viewer.swf"
                                            type="application/x-shockwave-flash"
                                            style="width: inherit;height: inherit;"/>
                                 </object>
                             </div>
+                            <div class="clear"></div>
+                            <p><a class="colr2 stream_link"
+                                  href="http://www.ustream.tv/embed/{{ stream.ustream_uid }}">{{ stream.title }}
+                                </a></p>
+
+                            <p class="viewcounts">241,699 views</p>
+
+                            <p class="by">Emergency Contact: <a href="#" class="undrlne">{{ stream.emergency_contact }}</a></p>
+
+                            <div class="clear"></div>
+
                             <script type="application/javascript">
-                                $('#{{ stream.ustream_uid }}div').mousedown(function(e){
+                                $('#{{ stream.ustream_uid }}div').mousedown(function (e) {
                                     $.fancybox.open({
-                                        href:'http://www.ustream.tv/embed/{{ stream.ustream_uid }}',
-                                        type:'iframe'
+                                        href: 'http://www.ustream.tv/embed/{{ stream.ustream_uid }}',
+                                        type: 'iframe'
                                     })
                                 })
                             </script>

@@ -8,10 +8,10 @@ def home(request):
     streams = UstreamListing.objects.all()
     for stream in streams:
         stream.ustream_uid = str(stream.ustream_uid)
-
+    streams = sorted(streams, key=lambda x:x.title)
     context = {
         'title': 'Community Cams',
-        'streams': streams
+        'streams': streams[0:6]
     }
     return render(request, 'index.html', context)
 
