@@ -13,7 +13,7 @@ def home(request):
     }
     return render(request, 'index.html', context)
 
-def list(request, query):
+def list(request):
     streams = UstreamListing.objects.all()
     context = {
         'title': 'List of available Streams',
