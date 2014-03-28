@@ -211,3 +211,24 @@ line-height: 1.3em;
 	margin: 0px 0px 60px;
 	padding-top:25px;
 }
+.home_welcome {
+padding: 30px 0px 20px;
+color: #666865;
+font: 16px "Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;
+-webkit-font-smoothing: antialiased;
+}
+
+.all_icon {
+-webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+.all_icon:hover {
+-webkit-transform: rotate(+10deg);
+     -moz-transform: rotate(+10deg);
+       -o-transform: rotate(+10deg);
+      -ms-transform: rotate(+10deg);
+          transform: rotate(+10deg);
+}

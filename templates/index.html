@@ -5,10 +5,18 @@
     <!--Content Sec -->
     <div id="content_sec">
         <!--Main Section-->
+        <div class="container" id="written_content">
+
+            <div class="home_welcome">
+                <ul>
+                    <li><i>Welcome to Crowdcams, the world's first video surveillance crowd-sourcing platform. Share and watch live video streams of public areas and contribute in reducing crime right away.</i></li>
+                </ul>
+            </div>
+        </div>
         <div class="col1">
-            <!--Vedio slider -->
+            <!--Video slider -->
             <div class="mostcontainer">
-                <h2 class="heading">Featured Streams</h2>
+                <h2>Featured Locations</h2>
                 <ul>
                     {% for stream in streams %}
                         <li>
@@ -65,8 +73,7 @@
         </div>
         <div class="clear"></div>
         <!-- movie ads-->
-        <button name="btn_list" type="button" style="width: 100%;height: 20px;" onclick="window.location.href='/list'">
-            See Full List
-        </button>
+        <img name="btn_list" class = "all_icon" style=" width: 10%;height: 10%;" onclick="window.location.href='/list'" src="{% static 'images/all_icon.png' %}">
+
     </div>
 {% endblock %}
