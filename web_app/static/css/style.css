@@ -1742,6 +1742,9 @@ margin-bottom: 10px;
 -webkit-font-smoothing: antialiased;
 }
 
+.errorlist,.errors {
+    color: red;
+}
 /*
 =======================================================================
 	Vertical Alignment of textbox and label in the Form
@@ -1767,3 +1770,4 @@ form, input {
 form {
     width: 300px;
 }
+

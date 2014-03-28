@@ -2,45 +2,72 @@
 
 {% block content %}
     {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/formatting.css' %}" />
-	<div id="content_sec">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/formatting.css' %}" />
+    <div id="content_sec">
         <!--Main Section-->
-	<div class="container" id="written_content">
-		<div class="interior">
-			<h2 style="font-size:32px">Protect Your Neighbourhood</h2>
-		<div class="group">
-			<p class="small_type"><nbsp><nbsp><nbsp><nbsp>At Crowdcams we envision a world where, as opposed to present, most of the surveillance cameras are monitored by the crowd and criminal instances are reported at the time of activity. This is in contrast with the current system, where, a bunch of security personals look at the video recordings much after everything has happened.</p>
-		</div>
-        <h2 style="font-size:24px">Going forward</h2>
-		<div class="group2">
-<!--Tell the users what all platforms we support and some other stuff-->
-<!--Searching and adding a UStream Video>-->
-<div id="ustream_url_add" height="400px" position="relative">
-	<form action="/protectyourneighborhood/newpost" method="POST">
-		{% csrf_token %}
-        <ol>
-        <li>
-		<label id="ustream_url_label" style="text-transform:uppercase;">Stream URL</label>
-		<input id="ustream_url" class="textbox" style="width:400px" type="url" name="ustream_url" placeholder="http://www.ustream.tv/channel/your-channel-here"><br>
-        </li>
-        <li>
-        <label id="emergency_contact_label" style="text-transform:uppercase;">Emergency Phone Number</label>
-		<input id="emergency_contact" class="textbox" type="number" name="emergency_contact" placeholder = "(212) 239-9811">
-		</li>
-        <li>
-        <label id="location_description_label" style="text-transform:uppercase;">Exact Location</label>
-		<textarea id="location_desription" class="textbox" type="text" cols="2" rows="10" name="location_description" placeholder="Intersection of 33rd Street and Broadway, New York, NY 10001"></textarea>
-		</li>
-        <li>
-        <input type="submit" class="btn" name="submit">
-        </li>
-        </ol>
-	</form>
+        <div class="container" id="written_content">
+
+            <div class="interior">
+                <h2 style="font-size: 32px">Protect areas around you now</h2>
+                <div class="group2">
+                    <ul>
+                        <li>Stream a live street camera around you and make it possible for the crowd to protect it.</li>
+                        <li>In order to start streaming, follow these instructions and fill the form below:</li>
+                    </ul>
+                    <br>
+                    <ol >
+                        <li>1. Stream the live video at our partner site <a href="www.ustream.tv">Ustream.tv</a>  and paste the live stream URL</li>
+                        <li>2. Provide an Emergency Phone number that someone may dial upon noticing a suspicious activity at your stream</li>
+                        <li>3. Fill in the most exact description of the location you are streaming</li>
+                    </ol>
+                    <br>
+                    <ol>
+                        <li>And that's it. If you are visiting Crowdcams for the first time, consider reading the <a href="/howitworks">How It Works</a> page.</li>
+                    </ol>
+                    <br>
+                    <ol>
+                        <li style="color: green">
+                            {{ feedback_to_user }}
+                        </li>
+                    </ol>
+                </div>
+                <!--Tell the users what all platforms we support and some other stuff-->
+                <!--Searching and adding a UStream Video>-->
+                <div id="ustream_url_add" height="400px" position="relative">
+                    {% if not feedback_to_user  %}
+                    <form action="/protectyourneighborhood/newpost" method="POST">
+                        {% csrf_token %}
+                        <ol>
+                            <li>
+                                <p class = "errors">{{ form.ustream_url.errors }}</p>
+                                <label id="ustream_url_label" style="text-transform:uppercase;">Stream URL</label>
+                                <input id="ustream_url" class="textbox" style="width:400px" type="url" name="{{ form.ustream_url.html_name }}" placeholder="http://www.ustream.tv/channel/your-channel-here"><br>
+                            </li>
+                            <li>
+                                <p class = "errors">{{ form.emergency_contact.errors }}</p>
+                                <label id="emergency_contact_label" style="text-transform:uppercase;">Emergency Phone Number</label>
+                                <input id="emergency_contact" class="textbox" type="number" name="{{form.emergency_contact.html_name}}" placeholder = "(212) 239-9811">
+                            </li>
+                            <li>
+                                <p class = "errors">{{ form.location_description.errors }}</p>
+                                <label id="location_description_label" style="text-transform:uppercase;">Exact Location</label>
+                                <textarea id="location_desription" class="textbox" type="text" cols="2" rows="10" name="{{form.location_description.html_name}}" placeholder="Intersection of 33rd Street and Broadway, New York, NY 10001"></textarea>
+                            </li>
+                            <li>
+
+                            </li>
+                                <p class = "errors">{{ form.captcha.errors }}</p>
+                                {{ form.captcha }}
+                            <li>
+                                <input type="submit" class="btn" name="submit">
+                            </li>
+                        </ol>
+                    </form>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
-</div>
 
 {% endblock %}

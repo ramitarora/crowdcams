@@ -26,6 +26,8 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+RECAPTCHA_PUBLIC_KEY = '6LcezPASAAAAAGu4nc6H7zLTSeb72LwKBk4PM7ya'
+RECAPTCHA_PRIVATE_KEY = '6LcezPASAAAAAAT4y4ap0632StvvsFrccE3JAAvU'
 
 # Application definition
 
@@ -37,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web_app',
+    'captcha'
 )
 
 MIDDLEWARE_CLASSES = (
