@@ -9,7 +9,7 @@ def home(request):
     streams = UstreamListing.objects.all()
     streams = sorted(streams, key=lambda x:x.title)
     context = {
-        'title': 'Crowd Cams',
+        'title': 'Crowdcams',
         'streams': streams[0:6]
     }
     return render(request, 'index.html', context)
