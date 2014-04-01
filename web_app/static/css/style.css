@@ -673,6 +673,7 @@ h2 {
 	font-size:11px;
 }
 .mostcontainer li{
+    width: 290px;
 	float:left;
 	margin-left: 10px;
 	padding-bottom:20px;
@@ -723,10 +724,10 @@ h2 {
 
 .listcontainer .vediodiv{
     float: left;
+    margin-right: 20px;
 }
 
 .listcontainer .stream_details {
-    float: left;
     padding-left: 30px;
     padding-top: 20px;
 }
