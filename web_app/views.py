@@ -31,7 +31,6 @@ def list(request):
     }
     return render(request, 'listing.html', context)
 
-
 def protect_your_neighborhood(request):
     captcha = ReCaptchaField(attrs={'theme' : 'clean'})
     form = SubmitForm()
@@ -53,11 +52,13 @@ def our_vision(request):
     context = {'title': 'Our Vision'}
     return render(request, 'ourvision.html', context)
 
+
 class SubmitForm(forms.Form):
     ustream_url = forms.CharField()
     emergency_contact = forms.IntegerField()
     location_description = forms.CharField()
     captcha = ReCaptchaField(attrs={'theme' : 'clean'})
+
 
 def new_post(request):
     if request.method == 'POST':
