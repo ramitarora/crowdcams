@@ -56,9 +56,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'CommunityCams.urls'
+ROOT_URLCONF = 'Crowdcams.urls'
 
-WSGI_APPLICATION = 'CommunityCams.wsgi.application'
+WSGI_APPLICATION = 'Crowdcams.wsgi.application'
 
 
 # Database
