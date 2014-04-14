@@ -730,6 +730,8 @@ h2 {
 .listcontainer .stream_details {
     padding-left: 30px;
     padding-top: 20px;
+    float: left;
+    width: 60%;
 }
 
 #accordion .ui-accordion-content {
