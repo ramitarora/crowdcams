@@ -273,6 +273,7 @@ ul.social_networks {
 ul.social_networks li {
 	float:left;
 	margin-right:8px;
+    margin-top: 5px;
 }
 ul.social_networks li.share {
 	margin-right:5px!important;

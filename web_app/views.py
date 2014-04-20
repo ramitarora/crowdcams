@@ -75,3 +75,11 @@ def new_post(request):
     else:
         form = SubmitForm()
     return render(request, 'protectyourneighborhood.html', {'form':form,})
+
+
+def login(request):
+    return HttpResponseRedirect('/')
+
+
+def register(request):
+    return HttpResponseRedirect('/')

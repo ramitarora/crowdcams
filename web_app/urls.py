@@ -17,4 +17,6 @@ urlpatterns = patterns('',
                        url(r'^howitworks/$', views.how_it_works, name='how_it_works'),
                        url(r'^projectfounders/$', views.project_founders, name='project_founders'),
                        url(r'^ourvision/$', views.our_vision, name='our_vision'),
+                       url(r'^accounts/register/$', views.register, name='user_registration'),
+                       url(r'^accounts/login/$', views.login, name='user_login')
 )
