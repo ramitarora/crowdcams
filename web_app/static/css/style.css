@@ -273,11 +273,21 @@ ul.social_networks {
 ul.social_networks li {
 	float:left;
 	margin-right:8px;
-    margin-top: 5px;
 }
-ul.social_networks li.share {
+ul.social_networks li.fb {
 	margin-right:5px!important;
 	float:left;
+    margin-top: 3px;
+}
+ul.social_networks li.linkedin {
+	margin-right:5px!important;
+	float:left;
+    margin-top: 2px;
+}
+ul.social_networks li.linkedin .li-connect-widget .li-connect-mark {
+    background: url(http://s.c.lnkd.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) -0px -591px no-repeat !important;
+    width: 23px !important;
+    height: 23px !important;
 }
 ul.social_networks li img {
 	float:left;
