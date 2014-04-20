@@ -289,6 +289,11 @@ ul.social_networks li.linkedin .li-connect-widget .li-connect-mark {
     width: 23px !important;
     height: 23px !important;
 }
+ul.social_networks li.twitter {
+	margin-right:5px!important;
+	float:left;
+    margin-top: 4px;
+}
 ul.social_networks li img {
 	float:left;
 	margin-top:5px;
