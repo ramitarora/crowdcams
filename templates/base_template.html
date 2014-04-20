@@ -1,76 +1,105 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-{% load staticfiles %}
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{{ title }}</title>
-<!-- // Stylesheets // -->
-<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="{% static 'css/ddsmoothmenu.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'js/fancybox/jquery.fancybox.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/formatting.css' %}" />
-<!--Favicon Support-->
-<!-- Chrome, Safari, IE -->
-<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    {% load staticfiles %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{ title }}</title>
+    <!-- // Stylesheets // -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ddsmoothmenu.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'js/fancybox/jquery.fancybox.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/formatting.css' %}"/>
+    <!--Favicon Support-->
+    <!-- Chrome, Safari, IE -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
-<!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
-<link rel="icon" href="{% static 'images/favicon.png' %}">
-<!-- // Javascript // -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script type="text/javascript" src="{% static 'js/ddsmoothmenu.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/contentslider.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/ustream-embedapi.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/cufon-yui.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/Tahoma_400-Tahoma_700.font.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/fancybox/jquery.fancybox.js' %}"></script>
-<script type="text/javascript">Cufon.replace('h1,h2,h3,h4,h5, h6, .txtcufon');</script>
+    <!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+    <!-- // Javascript // -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="{% static 'js/ddsmoothmenu.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/contentslider.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ustream-embedapi.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/cufon-yui.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/Tahoma_400-Tahoma_700.font.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fancybox/jquery.fancybox.js' %}"></script>
+    <script type="text/javascript">Cufon.replace('h1,h2,h3,h4,h5, h6, .txtcufon');</script>
 </head>
 <body>
-	<!-- UserVoice JavaScript SDK (only needed once on a page) -->
-	<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/lDOKZikPg9n9uvZbDUotrw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+<script>(function () {
+    var uv = document.createElement('script');
+    uv.type = 'text/javascript';
+    uv.async = true;
+    uv.src = '//widget.uservoice.com/lDOKZikPg9n9uvZbDUotrw.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(uv, s)
+})()</script>
 
-	<!-- A tab to launch the Classic Feedback Widget -->
-	<script>
-	UserVoice = window.UserVoice || [];
-	UserVoice.push(['showTab', 'classic_widget', {
-	  mode: 'full',
-	  primary_color: '#cc6d00',
-	  link_color: '#007dbf',
-	  default_mode: 'support',
-	  forum_id: 245812,
-	  tab_label: 'Feedback & Support',
-	  tab_color: '#cc6d00',
-	  tab_position: 'middle-right',
-	  tab_inverted: false
-	}]);
-	</script>
-	
-    <div id="wrapper_sec">
-    	<!--Masterhead -->
-        <div id="masthead">
-        	<div class="logo"><a href="/"><img src="{% static 'images/logo2.png' %}" style="margin-top: -20px;" width="120" height="90" alt="" /></a></div>
-			<div class="header_rightsec">
-            	<div class="rightsec_1">
-                	<div class="navigation">
-                    	<div id="smoothmenu1" class="ddsmoothmenu">
-                        	<ul>
-                            	<li><a class="home" href="/">Home</a></li>
-                            	<li><a href="/protectyourneighborhood/">Protect Your Neighborhood</a></li>
-								<li><a href="/howitworks/">How It Works</a></li>
-                            </ul>
-                        </div>
+<!-- A tab to launch the Classic Feedback Widget -->
+<script>
+    UserVoice = window.UserVoice || [];
+    UserVoice.push(['showTab', 'classic_widget', {
+        mode: 'full',
+        primary_color: '#cc6d00',
+        link_color: '#007dbf',
+        default_mode: 'support',
+        forum_id: 245812,
+        tab_label: 'Feedback & Support',
+        tab_color: '#cc6d00',
+        tab_position: 'middle-right',
+        tab_inverted: false
+    }]);
+</script>
+
+<div id="wrapper_sec">
+    <!--Masterhead -->
+    <div id="masthead">
+        <div class="logo"><a href="/"><img src="{% static 'images/logo2.png' %}" style="margin-top: -20px;" width="120"
+                                           height="90" alt=""/></a></div>
+        <div class="header_rightsec">
+            <div class="rightsec_1">
+                <div class="navigation">
+                    <div id="smoothmenu1" class="ddsmoothmenu">
+                        <ul>
+                            <li><a class="home" href="/">Home</a></li>
+                            <li><a href="/protectyourneighborhood/">Protect Your Neighborhood</a></li>
+                            <li><a href="/howitworks/">How It Works</a></li>
+                            <li>
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                                      style="
+                                      width: auto !important;
+                                      padding-top: 15px;
+                                      line-height: 38px;">
+                                    <input type="hidden" name="cmd" value="_s-xclick">
+                                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+                                    <input type="image"
+                                           src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0"
+                                           name="submit" alt="PayPal - The safer, easier way to pay online!"
+                                           style="
+                                           width:auto !important;
+                                           padding: 0 25px;">
+                                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+                                         width="1" height="1">
+                                </form>
+
+                            </li>
+                        </ul>
                     </div>
-                    <!--Top search-->
-                    <!--<div class="top_search">
-                   		<input value="Enter you keywords to search" onfocus="if(this.value=='Enter you keywords to search') {this.value='';}"
-                        onblur="if(this.value=='') {this.value='Enter you keywords to search';}"name="txt" type="text" />
-                    	<a href="#" class="search">Search</a>
-                    </div>-->
                 </div>
-			<!-- Todo: Implement in Second Phase
+                <!--Top search-->
+                <!--<div class="top_search">
+                       <input value="Enter you keywords to search" onfocus="if(this.value=='Enter you keywords to search') {this.value='';}"
+                    onblur="if(this.value=='') {this.value='Enter you keywords to search';}"name="txt" type="text" />
+                    <a href="#" class="search">Search</a>
+                </div>-->
+            </div>
+            <!-- Todo: Implement in Second Phase
             	<div class="rightsec_2">
            	  <ul class="toplinks">
                 		<li><a href="#"> Browse</a></li>
@@ -86,38 +115,41 @@
                     </ul>
                 </div>
             -->
-			</div>
-			<div class="clear" ></div>
-		</div>
+        </div>
+        <div class="clear"></div>
+    </div>
     {% block content %}{% endblock %}
- <div class="clear"></div>
+    <div class="clear"></div>
 </div>
 
 <!-- bottom section-->
 <div id="bottom_sec">
     <div id="bottomcontianer">
-    	<div class="innercontainer">
-   	    <div id="footer">
-            <div class="archieve">
-                <a href="/"><img src="{% static 'images/logo2.png' %}" width="240px" height="180px" alt="" /></a>
+        <div class="innercontainer">
+            <div id="footer">
+                <div class="archieve">
+                    <a href="/"><img src="{% static 'images/logo2.png' %}" width="240px" height="180px" alt=""/></a>
+                </div>
+                <div class="footer_div">
+                    <h4>About us</h4>
+                    <ul>
+                        <!--<li><a href="/projectfounders/">Project Founders</a></li>-->
+                        <li><a href="/ourvision/">Our Vision</a></li>
+                        <li><a href="mailto:support@communitycams.org">Contact Us</a>
+                        <li>
+                    </ul>
+                </div>
             </div>
-			<div class="footer_div">
-            	<h4>About us</h4>
-            	<ul>
-                	<!--<li><a href="/projectfounders/">Project Founders</a></li>-->
-                		<li><a href="/ourvision/">Our Vision</a></li>
-						<li><a href="mailto:support@communitycams.org">Contact Us</a><li>
-                </ul>
-            </div>
-          </div>
         </div>
     </div>
     <div id="botbarbg">
-    	<div class="innercontainer">
-        	<div class="copy">Source Code Licensed under the Creative Commons License - Project Creators: Anant Singh and Ramit Arora</div>
-    	</div>
+        <div class="innercontainer">
+            <div class="copy">Source Code Licensed under the Creative Commons License - Project Creators: Anant Singh
+                and Ramit Arora
+            </div>
+        </div>
     </div>
-<div class="clear"></div>
+    <div class="clear"></div>
 </div>
 </body>
 </html>
