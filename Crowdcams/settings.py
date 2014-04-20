@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-SESSION_COOKIE_SERCURE = True
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -23,9 +22,9 @@ SECRET_KEY = 'f*km22)e)&@@ngb#yltt=+)0%dx+e_c*dsd^z-02w92db1kocs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ["crowdcams.org","www.crowdcams.org", "127.0.0.1"]
+ALLOWED_HOSTS = []
 
 #Test Domain 127.0.0.1
 #RECAPTCHA_PUBLIC_KEY = '6LcezPASAAAAAGu4nc6H7zLTSeb72LwKBk4PM7ya'

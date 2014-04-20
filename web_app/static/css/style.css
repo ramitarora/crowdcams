@@ -674,8 +674,7 @@ h2 {
 }
 .mostcontainer li{
     width: 290px;
-	float: left;
-    height: 320px;
+	float:left;
 	margin-left: 10px;
 	padding-bottom:20px;
 	margin-right:10px;
