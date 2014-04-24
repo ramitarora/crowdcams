@@ -18,5 +18,8 @@ urlpatterns = patterns('',
                        url(r'^projectfounders/$', views.project_founders, name='project_founders'),
                        url(r'^ourvision/$', views.our_vision, name='our_vision'),
                        url(r'^accounts/register/$', views.register, name='user_registration'),
-                       url(r'^accounts/login/$', views.login, name='user_login')
+                       url(r'^accounts/login/$', views.login, name='user_login'),
+                       url(r'^view/$', views.view_stream, name='view_stream'),
+                       url(r'^apps/regions/$', views.app_regions, name='app_regions'),
+                       url(r'^apps/smiles/$', views.app_smiles, name='app_smiles')
 )

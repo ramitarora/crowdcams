@@ -60,6 +60,15 @@
             </div>
             <div class="clear"></div>
         </div>
+        <div class="col2">
+           		<h2 class="heading">Twitter Feed</h2>
+              		<div class="sideblock">
+               			<a class="twitter-timeline" href="https://twitter.com/Crowdcams" data-widget-id="458026112870658048">Tweets by @Crowdcams</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              		<div class="clear"></div>
+              </div>
+              <!--Feature Vedio -->
+        </div>
         <div class="clear"></div>
         <!-- movie ads-->
         <img name="btn_list" class="all_icon" style=" width: 10%;height: 10%;" onclick="window.location.href='/list'"
@@ -67,7 +76,8 @@
         <script type="application/javascript">
             $('.light_div').mousedown(function (e) {
                 var curr_div = $(e.target);
-                $.fancybox.open({
+                window.location.href='/view/?vid='+curr_div.data('uid');
+                /*$.fancybox.open({
                     href: 'http://www.ustream.tv/embed/' + curr_div.data('uid'),
                     type: 'iframe',
                     afterLoad: function () {
@@ -76,7 +86,7 @@
                                 '<h4>Emergency Contact: ' + curr_div.data('contact') + '</h4>';
                         $(suffix).appendTo(this.inner)
                     }
-                })
+                })*/
             })
         </script>
     </div>
