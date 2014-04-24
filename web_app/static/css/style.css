@@ -83,7 +83,7 @@ p {
 }
 .heading {
 	width:100%;
-	padding:4px 0 6px 0;
+	padding:10px 0 6px 0;
 	border-bottom:solid 1px #cccccc;
 	margin-bottom: 10px;
     text-align: center;
@@ -428,7 +428,7 @@ a.next {
 =======================================================================
 */
 .col1 {
-	width:100%;
+	width:652px;
 	float:left;
 }
 .col2 {
@@ -677,7 +677,7 @@ h2 {
 }
 .mostcontainer h2, .nwscontainer h2, .listcontainer h2{
 	width:100%;
-	padding:10px 0 6px 0;
+	padding:10px 0 6px 30px;
 	border-bottom:solid 1px #ccc;
 }
 .mostcontainer ul {

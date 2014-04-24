@@ -83,3 +83,30 @@ def login(request):
 
 def register(request):
     return HttpResponseRedirect('/')
+
+
+def view_stream(request):
+    vid = request.GET['vid']
+    stream = UstreamListing.objects.get(ustream_uid=vid)
+    context = {
+        'stream': stream
+    }
+    return render(request, "view_stream.html", context)
+
+
+def app_regions(request):
+    vid = request.GET['vid']
+    stream = UstreamListing.objects.get(ustream_uid=vid)
+    context = {
+        'stream': stream
+    }
+    return render(request, "app_regions.html", context)
+
+
+def app_smiles(request):
+    vid = request.GET['vid']
+    stream = UstreamListing.objects.get(ustream_uid=vid)
+    context = {
+        'stream': stream
+    }
+    return render(request, "app_smiles.html", context)
