@@ -1,10 +1,16 @@
+import json
+from django.core.context_processors import csrf
+from django.core.serializers.json import DjangoJSONEncoder
 from django.shortcuts import render
 import web_app.controllers.model_entry as model_entry
 from web_app.models import UstreamListing
 from captcha.fields import ReCaptchaField
 from django import forms
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 # Create your views here.
+from web_app.tasks import face_detect
+
+
 def home(request):
     streams = UstreamListing.objects.all()
     streams = sorted(streams, key=lambda x:x.title)
@@ -95,12 +101,23 @@ def view_stream(request):
 
 
 def app_regions(request):
-    vid = request.GET['vid']
-    stream = UstreamListing.objects.get(ustream_uid=vid)
-    context = {
-        'stream': stream
-    }
-    return render(request, "app_regions.html", context)
+    if request.method == "GET":
+        vid = request.GET['vid']
+        stream = UstreamListing.objects.get(ustream_uid=vid)
+        context = {
+            'stream': stream
+        }
+        return render(request, "app_regions.html", context)
+    else:
+        x = int(request.POST.get('x'))
+        y = int(request.POST.get('y'))
+        width = int(request.POST.get('width'))
+        height = int(request.POST.get('height'))
+        stream_url = str(request.POST.get('stream_url'))
+        name = str(request.POST.get('name'))
+        face_detect.delay(x,y,width,height, stream_url)
+        response = {'status': 'true'}
+        return HttpResponse(json.dumps(response, cls=DjangoJSONEncoder), content_type='application/json')
 
 
 def app_smiles(request):
@@ -109,4 +126,5 @@ def app_smiles(request):
     context = {
         'stream': stream
     }
+    context.update(csrf(request))
     return render(request, "app_smiles.html", context)

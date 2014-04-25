@@ -5,7 +5,7 @@ import thread
 import gc
 
 def image_not_equal(img1, img2):
-    return not (numpy.allclose(img1, img2, 24.50, 30.0))
+    return not (numpy.allclose(img1, img2, 50.0, 60.0))
 
 def diffImg(t0, t1, t2):
     d1 = cv2.absdiff(t2, t1)

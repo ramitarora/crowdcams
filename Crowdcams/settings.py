@@ -45,7 +45,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web_app',
-    'captcha'
+    'captcha',
+    'djcelery'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,3 +97,5 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'

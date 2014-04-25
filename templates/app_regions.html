@@ -174,11 +174,33 @@
 
             div_paper.onmouseup = function (event) {
                 var region_name = '';
-                while(region_name = ''){
+                document.onmousemove = null;
+                while(region_name == ''){
                     region_name = prompt("Enter a name for the region:");
                 }
+                $.ajax({
+                    url: "{% url 'web_app:app_regions' %}",
+                    data: {
+                        'x': rect.attr('x'),
+                        'y': rect.attr('y'),
+                        'width': rect.attr('width'),
+                        'height': rect.attr('height'),
+                        'region': region_name,
+                        'stream_url': "{{ stream.url }}"
+                    },
+                    type: "POST",
+                    dataType: 'json'
+                }).done(function(data){
+                    if(data.status == 'true'){
+                        alert("Started monitoring: " + region_name);
+                    }
+                    else{
+                        alert("Failed to setup monitoring");
+                    }
+                }).fail(function(jqXHR, status, error){
+                    alert("Couldn't connect to server");
+                })
 
-                document.onmousemove = null;
             };
         })();
     </script>
